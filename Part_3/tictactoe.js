@@ -1,28 +1,28 @@
 var curLetter;
-var won = false;
 
 window.onload = function () {
-    var table = document.getElementsByTagName("table")[0];
     change_turn();
+    document.getElementsByTagName("table")[0].addEventListener("click", click_event);
+}
 
-    document.getElementsByTagName("table")[0].addEventListener("click", function (event) {
-        let target = event.target;
+function click_event(event) {
+    let target = event.target;
 
-        if (target.innerHTML == "" && won != true) {
-            target.innerHTML = curLetter;
+    if (target.innerHTML == "") {
+        target.innerHTML = curLetter;
 
-            change_turn();
-            checkForWin(table);
-        }
-    });
+        change_turn();
+        let table = document.getElementsByTagName("table")[0];
+        check_for_win(table);
+    }
 }
 
 function win_game(player) {
     document.getElementById("turn_indicator").innerHTML = player + " has won!";
-    won = true;
+    document.getElementsByTagName("table")[0].removeEventListener("click", click_event);
 }
 
-function checkForWin(table) {
+function check_for_win(table) {
     let cells = table.getElementsByTagName("td");
 
     for (let i = 0; i < cells.length / 3; i++) {
@@ -33,7 +33,7 @@ function checkForWin(table) {
             win_game(cells[i].innerHTML);
 
 
-            // Check horizontal
+        // Check horizontal
         } else if (cells[i * 3].innerHTML != "" &&
             cells[i * 3].innerHTML == cells[i * 3 + 1].innerHTML &&
             cells[i * 3 + 1].innerHTML == cells[i * 3 + 2].innerHTML) {
