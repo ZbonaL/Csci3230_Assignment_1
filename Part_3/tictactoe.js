@@ -13,9 +13,9 @@ function click_event(event) {
 
         change_turn();
         let table = document.getElementsByTagName("table")[0];
-        check_for_win(table);
 
-        if (empty_slots(table) == false) {
+        let won = check_for_win(table);
+        if (empty_slots(table) == false &&  won == false) {
             win_game("Draw");
         }
     }
@@ -38,7 +38,9 @@ function check_for_win(table) {
         if (cells[i].innerHTML != "" &&
             cells[i].innerHTML == cells[i + 3].innerHTML &&
             cells[i + 3].innerHTML == cells[i + 6].innerHTML) {
+
             win_game(cells[i].innerHTML);
+            return true;
 
 
             // Check horizontal
@@ -47,19 +49,26 @@ function check_for_win(table) {
             cells[i * 3 + 1].innerHTML == cells[i * 3 + 2].innerHTML) {
 
             win_game(cells[i * 3].innerHTML);
+            return true;
         }
     }
 
     if (cells[0].innerHTML != "" &&
         cells[0].innerHTML == cells[4].innerHTML &&
         cells[4].innerHTML == cells[8].innerHTML) {
-        win_game(cells[0].innerHTML)
+
+        win_game(cells[0].innerHTML);
+        return true;
     }
     if (cells[6].innerHTML != "" &&
         cells[6].innerHTML == cells[4].innerHTML &&
         cells[4].innerHTML == cells[2].innerHTML) {
-        win_game(cells[6].innerHTML)
+
+        win_game(cells[6].innerHTML);
+        return true;
     }
+
+    return false;
 }
 
 function change_turn(player) {

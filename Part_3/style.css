@@ -1,8 +1,9 @@
 table {
     border-collapse: collapse;
-    width: 50%;
-    height: 50%;
+    width: 45em;
+    height: 45em;
     margin: auto;
+    user-select: none;
 }   
 
 td {
