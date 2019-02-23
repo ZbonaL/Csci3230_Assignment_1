@@ -3,39 +3,68 @@
 
 <head>
     <title>Learn Rugby</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-    <div id="header">
-        <h1>Learn Rugby</h1>
-        <ul id="navbar">
-            <li><a href="Main_Page.html">Main Page</a></li>
-            <li><a href="Schedule.html">Schedule</a></li>
-            <li><a href="Comments.html">Comments</a></li>
-        </ul>
+    <div class="pageHeader">
+        <div>
+            <img src="logo.png">
+            <h1>Learn Rugby</h1>
+        </div>
+
+        <div class="navigation">
+            <ul>
+                <li><a href="Main_Page.html">Main Page</a></li>
+                <li><a href="Schedule.html">Schedule</a></li>
+                <li><a href="Comments.html">Comments</a></li>
+            </ul>
+        </div>
+
 
     </div>
 
-    <div id="FakeComment1">
-        <p>Fernando</p>
-        <p>Question: When do the dames start</p>
-        <p>When is the first game?</p>
-    </div>
+    <section>
+        <div>
+            <div class="header">
+                <p>Question: When do the games start?</p>
+            </div>
+            <div class="body">
+                <p>When is the first game?</p>
+                <p> - Fernando</p>
+            </div>
+        </div>
 
-    <div id="FakeComment2:">
-        <p>Julian</p>
-        <p>You shoud take a look at the Schedule page.</p>
-    </div>
+        <div>
+            <div class="header">
+                <p>Re: When do the games start?</p>
+            </div>
+            <div class="body">
+                <p>You shoud take a look at the Schedule page.</p>
+                <p> - Julian</p>
+            </div>
+        </div>
 
-    <div id="Input_Form">
-        <form>
-            Username: <br>
-            <input type="text" name="username" value="Sebastian"> <br>
-            Comment:<br>
-           <textarea name="Comment_Input" cols="40" rows="5"></textarea>
-           
-        </form>
-    </div>
+
+        <div>
+            <div class="header">
+                <p>Post a comment:</p>
+            </div>
+            <div class="body">
+                <form>
+                    Username: <br>
+                    <input type="text" name="username" value="Sebastian"> <br>
+                    Topic: <br>
+                    <input type="text" name="topic" value=""> <br>
+                    Comment: <br>
+                    <textarea name="Comment_Input" cols="40" rows="5"></textarea> <br>
+                    <button>Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
 </body>
 
 </html>

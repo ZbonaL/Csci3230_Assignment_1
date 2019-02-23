@@ -55,6 +55,17 @@ body {
     padding: 0.5em;
 }
 
-.body * {
-    
+.schedule {
+    padding: 1em;
+}
+
+.schedule table {
+    border: 1px outset #000070;
+    margin: auto;
+    width: 100%;
+}
+
+.schedule td {
+    border: 1px solid black;
+    text-align: center;
 }
