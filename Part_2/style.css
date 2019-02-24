@@ -65,7 +65,11 @@ body {
     width: 100%;
 }
 
-.schedule td {
+.schedule caption {
+    margin-bottom: 1rem;
+}
+
+.schedule td{
     border: 1px solid black;
     text-align: center;
 }
